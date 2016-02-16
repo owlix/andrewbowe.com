@@ -202,7 +202,7 @@ section.section-main {
       margin: 0 0 10px 0;
       font-size: 16px; }
 
-.slide .section-inner {
+.slide section.section-main .section-inner {
   left: -200px; }
 
 .shell {

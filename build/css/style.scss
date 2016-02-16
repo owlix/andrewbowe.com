@@ -251,6 +251,7 @@ section.section-main {
 		position: fixed;
     	width: 100%;
     	top: 20%;
+    	left: initial;
 
     	h1 {
     		color:#fff;
@@ -264,6 +265,13 @@ section.section-main {
     		margin: 0 0 10px 0;
     		font-size: 16px;
     	}
+	}
+	
+}
+
+.slide section.section-main {
+ .section-inner {
+		left: -200px!important;
 	}
 }
 
