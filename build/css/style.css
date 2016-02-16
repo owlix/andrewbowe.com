@@ -190,7 +190,7 @@ section.section-main {
     text-align: center;
     position: fixed;
     width: 100%;
-    top: 20%; }
+    top: 10%; }
     section.section-main .section-inner h1 {
       color: #fff;
       text-transform: uppercase;
@@ -200,6 +200,8 @@ section.section-main {
       text-transform: uppercase;
       margin: 0 0 10px 0;
       font-size: 16px; }
+  section.section-main .slide .section-inner {
+    left: -200px; }
 
 .shell {
   max-width: 1400px;
