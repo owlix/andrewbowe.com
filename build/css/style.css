@@ -203,7 +203,7 @@ section.section-main {
       font-size: 16px; }
 
 .slide section.section-main .section-inner {
-  left: -200px; }
+  left: -200px !important; }
 
 .shell {
   max-width: 1400px;
@@ -288,10 +288,23 @@ header.scrolled {
 
 /* Mobile */
 @media (max-width: 640px) {
+  header, footer {
+    width: 98%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin: 0; }
+  .row {
+    width: 100%; }
   h1 {
     font-size: 2.5em; }
   h2 {
     font-size: 0.8em; }
+  section.section-main .section-inner {
+    position: relative;
+    padding: 0;
+    left: initial; }
+  .slide section.section-main .section-inner {
+    left: initial; }
   section.section-main .section-inner h2 {
     font-size: 0.8em; }
   input, textarea {
