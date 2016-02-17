@@ -32,6 +32,9 @@ button, .button {
   border: none;
   outline: 0; }
 
+a {
+  text-decoration: none; }
+
 input, textarea {
   -webkit-appearance: none;
   outline: 0;
@@ -187,7 +190,7 @@ section.section-main {
   section.section-main .section-inner {
     padding-top: 50px;
     text-align: center;
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 20%;
     left: initial; }

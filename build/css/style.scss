@@ -47,6 +47,16 @@ button, .button {
 	outline: 0;
 }
 
+a {
+	text-decoration:none;
+}
+
+a.button:hover {
+	background:#fff;
+	color:#000;
+	border-color:#000;
+}
+
 input, textarea {
 	-webkit-appearance: none;
 	outline:0;
