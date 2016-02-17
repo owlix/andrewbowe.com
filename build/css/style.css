@@ -188,7 +188,7 @@ section.section-main {
   section.section-main .section-inner {
     padding-top: 50px;
     text-align: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 20%;
     left: initial; }
@@ -304,7 +304,7 @@ header.scrolled {
     padding: 0;
     left: initial; }
   .slide section.section-main .section-inner {
-    left: initial; }
+    left: initial !important; }
   section.section-main .section-inner h2 {
     font-size: 0.8em; }
   input, textarea {
