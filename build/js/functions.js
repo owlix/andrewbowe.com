@@ -20,4 +20,19 @@ $(document).ready(function(){
 	//Fade In on Scroll Effect 
 	new WOW().init();
 
+
+	//Custom Scroll To Section
+	$('button').on('click', function(){
+		var data = $(this).attr('data-link');
+		$('section').each(function(){
+			var target = $(this).attr('class');
+			if (data === target) {
+				$('html, body').animate({
+					scrollTop: $(this).offset().top - 70
+				}, 500);
+				return false;
+			}
+		});
+	})
+
 });
