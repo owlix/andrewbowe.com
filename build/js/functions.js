@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+	var $windowWidth = $(window).width();  
 	$(window).on("scroll", function(){
 		var $winScoll = $(window).scrollTop();
 		var $winheight = $(window).height();
@@ -13,7 +13,6 @@ $(document).ready(function(){
 
 	//Push Menu
 	$('.mobile-menu').on('click', function(){
-		console.log('click');
 		$('body').toggleClass('slide');
 	});
 
@@ -21,7 +20,7 @@ $(document).ready(function(){
 	new WOW().init();
 
 
-	//Custom Scroll To Section
+	//Custom Scroll To Section (button)
 	$('button').on('click', function(){
 		var data = $(this).attr('data-link');
 		$('section').each(function(){
@@ -33,6 +32,25 @@ $(document).ready(function(){
 				return false;
 			}
 		});
+	})
+
+	//Custom Scroll To Section (a)
+	$('nav a').on('click', function(e){
+		e.preventDefault();
+		var link = $(this).attr('href');
+		$('section').each(function(){
+			var target = $(this).attr('class');
+			if (link === target) {
+				$('html, body').animate({
+					scrollTop: $(this).offset().top - 70
+				}, 500);
+				return false;
+			}
+		});
+		//Close mobile menu
+		if ($windowWidth < 640  ){
+			$('body').toggleClass('slide');
+		}
 	})
 
 });
