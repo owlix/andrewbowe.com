@@ -73,7 +73,7 @@ header, footer {
   z-index: 10; }
 
 header {
-  position: fixed;
+  position: relative;
   background: transparent;
   padding: 10px 0px;
   -webkit-transition: all ease-in-out 200ms;
@@ -95,12 +95,19 @@ nav {
   display: inline-block; }
   nav ul li {
     display: inline-block;
-    margin-left: 10px; }
+    margin-left: 10px;
+    text-transform: uppercase;
+    border: solid 2px transparent;
+    padding: 5px 10px;
+    -webkit-transition: all ease-in-out 200ms;
+    -moz-transition: all ease-in-out 200ms;
+    -o-transition: all ease-in-out 200ms;
+    transition: all ease-in-out 200ms; }
   nav a {
     text-decoration: none;
     color: #fff; }
-  nav li:hover a {
-    color: blue; }
+  nav li:hover {
+    border: solid 2px #fff; }
 
 /* Nav Mobile */
 .mobile-menu {
@@ -143,12 +150,16 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     border: none;
-    background: #999; }
+    background: #000;
+    width: 100%; }
+  .push-menu nav li:hover {
+    background-color: #fff;
+    cursor: pointer; }
   .push-menu nav a {
     text-decoration: none;
     color: #fff; }
   .push-menu nav li:hover a {
-    color: blue; }
+    color: #000; }
 
 .slide .push-menu nav {
   right: 0; }
@@ -276,15 +287,28 @@ header.scrolled {
 .section-about .fa {
   font-size: 60px; }
 
+.section-about ul {
+  margin-top: 20px; }
+
+.section-about ul li {
+  margin-bottom: 10px;
+  list-style: none; }
+
 .section-resume .row-resume {
   text-align: left; }
   .section-resume .row-resume .col-xs-8 {
-    border-left: 2px solid #fff; }
+    border-left: 2px solid #fff;
+    padding-left: 20px; }
   .section-resume .row-resume .col-xs-4 {
     text-align: right; }
 
 .section-resume li {
-  list-style: none; }
+  list-style: none;
+  font-weight: bold;
+  font-size: 18px; }
+
+.section-resume p {
+  margin-bottom: 10px; }
 
 .section-resume .row {
   padding-bottom: 40px; }
@@ -321,4 +345,9 @@ header.scrolled {
   header nav {
     display: none; }
   .mobile-menu {
-    display: inline-block; } }
+    display: inline-block; }
+  .section-about .col-xs-4 {
+    display: block;
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 50px; } }

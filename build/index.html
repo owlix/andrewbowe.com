@@ -17,13 +17,16 @@
     <nav>
       <ul>
         <li>
-          <a href="section-about">About</a>
+          <a class="scroll" href="section-about">About</a>
         </li>
         <li>
-          <a href="section-resume">Resume</a>
+          <a class="scroll" href="section-resume">Resume</a>
         </li>
-        <li class="box-button">
-          <a href="section-contact">Contact</a>
+        <li>
+          <a class="scroll"  href="section-contact">Contact</a>
+        </li>
+        <li>
+          <a href="https://github.com/owlix" target="_blank">GitHub</a>
         </li>
       </ul>
     </nav>
@@ -37,13 +40,16 @@
         <nav>
           <ul>
             <li>
-              <a href="section-about">About</a>
+              <a class="scroll" href="section-about">About</a>
             </li>
             <li>
-              <a href="section-resume">Resume</a>
+              <a class="scroll" href="section-resume">Resume</a>
             </li>
-            <li class="box-button">
-              <a href="section-contact">Contact</a>
+            <li>
+              <a class="scroll" href="section-contact">Contact</a>
+            </li>
+            <li>
+              <a href="https://github.com/owlix" target="_blank">GitHub</a>
             </li>
           </ul>
         </nav>
@@ -85,15 +91,33 @@
         <div class="col-xs-4 wow fadeInUp">
          <i class="fa fa-calendar"></i>
          <h2> Project Manager</h2>
+         <ul>
+          <li>Project Scoping</li>
+          <li>Client Facing</li>
+          <li>Team Management</li>
+          <li>Requirement Gathering</li>
+          </ul>
        </div>
        <div class="col-xs-4 wow fadeInUp">
         <i class="fa fa-laptop"></i>
         <h2> Front-End Developer</h2>
+        <ul>
+          <li>HTML Master</li>
+          <li>CSS Guru</li>
+          <li>JavaScript Ninja</li>
+           <li>Love Modern Front End Tools Like NPM</li>
+        </ul>
 
       </div>
       <div class="col-xs-4 wow fadeInUp">
         <i class="fa fa-pencil"></i>
         <h2> Designer</h2>
+        <ul>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>Layout</li>
+           <li>Typeography</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -110,36 +134,31 @@
     <div class="col-xs-4">
       <ul>
         <li>
-          Job Number One
+          Senior Technical Project Manager
         </li>
+        <p>August 2013 - Present</p>
       </ul>
     </div>
     <div class="col-xs-8">
-      <p>Keytar echo park mlkshk irony. Four dollar toast squid brunch williamsburg next level, wayfarers crucifix tattooed vice meggings kinfolk stumptown whatever VHS. Cliche actually kale chips man braid, pop-up sriracha typewriter church-key semiotics sustainable polaroid biodiesel pug franzen banjo. Hella ennui man bun pitchfork. Aesthetic keffiyeh thundercats swag gluten-free skateboard. Asymmetrical man braid kitsch, migas cornhole vice raw denim. Pug raw denim meh occupy, XOXO scenester pitchfork.</p>
+      <p>Manage the ups and downs of development teams and client expectations.</p>
+      <p>I make sure the job gets done and put out fires when the unexpected arises.</p>
+      <p>I've completed multiple site re-designs and full site builds, involved in all front-end, CMS and third party integrations. </p>
+      <p>Help all parties to understand the flow of information between all systems, while working alongside developers to ensure all processes are as efficient as possible</p>
     </div>
   </div>
   <div class="row row-resume">
     <div class="col-xs-4">
       <ul>
         <li>
-          Job Number One
+          Assistant to Creative Director
         </li>
+        <p>March 2013 - August 2013</p>
       </ul>
     </div>
     <div class="col-xs-8">
-      <p>Keytar echo park mlkshk irony. Four dollar toast squid brunch williamsburg next level, wayfarers crucifix tattooed vice meggings kinfolk stumptown whatever VHS. Cliche actually kale chips man braid, pop-up sriracha typewriter church-key semiotics sustainable polaroid biodiesel pug franzen banjo. Hella ennui man bun pitchfork. Aesthetic keffiyeh thundercats swag gluten-free skateboard. Asymmetrical man braid kitsch, migas cornhole vice raw denim. Pug raw denim meh occupy, XOXO scenester pitchfork.</p>
-    </div>
-  </div>
-  <div class="row row-resume">
-    <div class="col-xs-4">
-      <ul>
-        <li>
-          Job Number One
-        </li>
-      </ul>
-    </div>
-    <div class="col-xs-8">
-      <p>Keytar echo park mlkshk irony. Four dollar toast squid brunch williamsburg next level, wayfarers crucifix tattooed vice meggings kinfolk stumptown whatever VHS. Cliche actually kale chips man braid, pop-up sriracha typewriter church-key semiotics sustainable polaroid biodiesel pug franzen banjo. Hella ennui man bun pitchfork. Aesthetic keffiyeh thundercats swag gluten-free skateboard. Asymmetrical man braid kitsch, migas cornhole vice raw denim. Pug raw denim meh occupy, XOXO scenester pitchfork.</p>
+      <p>Designed and deployed marketing websites for various small-sized businesses.</p>
+      <p>Managed website development through all stages, including estimate creation, project scoping, and delivery offinal product.</p>
+      <p>Updated and maintained client websites on an ongoing basis.</p> 
     </div>
   </div>
 </div>
@@ -151,18 +170,18 @@
        <h1> Contact</h1>
        <form>
         <div class="form-row">
-          <label>name: </label>
-          <input type="text" placeholder="name" />
+          <label for="name">name: </label>
+          <input id="name" name="name" type="text" placeholder="name" />
         </div>
         <div class="form-row">
-          <label>email: </label>
-          <input type="email" placeholder="email address" />
+          <label for="email">email: </label>
+          <input  id="email" name="email" type="email" placeholder="email address" />
         </div>
         <div class="form-row">
-          <textarea placeholder="message"></textarea>
+          <textarea id="message" placeholder="message"></textarea>
         </div>
         <div class="form-row">
-          <input class="button" type="submit" value="Send" />
+          <button class="button form-submit">Send</button>
         </div>
       </form>
     </div>

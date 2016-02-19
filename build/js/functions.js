@@ -35,7 +35,7 @@ $(document).ready(function(){
 	})
 
 	//Custom Scroll To Section (a)
-	$('nav a').on('click', function(e){
+	$('a.scroll').on('click', function(e){
 		e.preventDefault();
 		var link = $(this).attr('href');
 		$('section').each(function(){
@@ -52,5 +52,25 @@ $(document).ready(function(){
 			$('body').toggleClass('slide');
 		}
 	})
+
+	//Form Submisson
+	$('.form-submit').on('click', function(e){
+		e.preventDefault();
+		var name = $('#name').val(),
+			email = $('#email').val(),
+			message = $('#message').val();
+
+
+
+		$.ajax({
+			method: 'POST',
+			url: 'SendForm.php',
+			data: {
+				name: name,
+				email: email,
+				message: message
+			}
+		});
+	});
 
 });

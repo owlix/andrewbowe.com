@@ -127,6 +127,13 @@ nav {
 	ul li {
 		display: inline-block;
 		margin-left:10px;
+		text-transform: uppercase;
+		border: solid 2px transparent;
+		padding: 5px 10px;
+		-webkit-transition: all ease-in-out 200ms;
+    	-moz-transition: all ease-in-out 200ms;
+    	-o-transition:all ease-in-out 200ms;
+    	transition: all ease-in-out 200ms;
 	}
 
 	a {
@@ -134,8 +141,8 @@ nav {
 		color: $navLinkColor;
 	}
 
-	li:hover a {
-		color: blue;
+	li:hover {
+		border: solid 2px #fff;
 	}
 }
 
@@ -186,8 +193,13 @@ nav {
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		border:none;
-		background: #999;
+		background: #000;
+		width:100%;
+	}
 
+	li:hover {
+		background-color:#fff;
+		cursor: pointer;
 	}
 
 	a {
@@ -196,7 +208,7 @@ nav {
 	}
 
 	li:hover a {
-		color: blue;
+		color: #000;
 	}
 }
 
@@ -369,12 +381,23 @@ header.scrolled {
 	.fa {
 		font-size: 60px;
 	}
+
+	ul {
+		margin-top: 20px;
+	}
+
+	ul li {
+		margin-bottom: 10px;
+		list-style: none;
+
+	}
 }
 .section-resume {
 	.row-resume {
 		text-align: left;
 		.col-xs-8 {
 			border-left: 2px solid #fff;
+			padding-left: 20px;
 		}
 
 		.col-xs-4 {
@@ -385,12 +408,19 @@ header.scrolled {
 
 	li {
 		list-style: none;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	p {
+		margin-bottom: 10px;
 	}
 
 	.row {
 		padding-bottom: 40px;
 	}
 }
+
 
 .section-inner {
 	padding-left:15px;
@@ -455,5 +485,14 @@ header.scrolled {
 
 	.mobile-menu {
 		display:inline-block;
+	}
+
+	.section-about {
+		.col-xs-4 {
+			display: block;
+			max-width: 100%;
+			flex-basis: 100%;
+			margin-bottom: 50px;
+		}
 	}
 }
