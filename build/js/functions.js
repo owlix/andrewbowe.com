@@ -64,7 +64,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			method: 'POST',
-			url: 'SendForm.php',
+			url: 'sendForm.php',
 			data: {
 				name: name,
 				email: email,
