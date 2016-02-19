@@ -60,6 +60,12 @@ $(document).ready(function(){
 			email = $('#email').val(),
 			message = $('#message').val();
 
+		function clearForm() {
+			$('#name').val('');
+			$('#email').val('');
+			$('#message').val('');
+		};
+
 
 
 		$.ajax({
@@ -69,6 +75,10 @@ $(document).ready(function(){
 				name: name,
 				email: email,
 				message: message
+			},
+			success: function(){
+				clearForm();
+				$('.form-submit').before('<p>Message Sent Successfully!</p>');
 			}
 		});
 	});
