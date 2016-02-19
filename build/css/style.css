@@ -73,7 +73,7 @@ header, footer {
   z-index: 10; }
 
 header {
-  position: relative;
+  position: fixed;
   background: transparent;
   padding: 10px 0px;
   -webkit-transition: all ease-in-out 200ms;
