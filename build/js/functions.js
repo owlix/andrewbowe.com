@@ -1,9 +1,13 @@
 $(document).ready(function(){
+	
 	var $windowWidth = $(window).width();  
+	var $winHeight = $(window).height();
+	
+	//Update header 
 	$(window).on("scroll", function(){
-		var $winScoll = $(window).scrollTop();
-		var $winheight = $(window).height();
-		if ($winheight < $winScoll) {
+		var $winScoll = $(window).scrollTop(),
+		    heightOffset = $winHeight - 20;
+		if (heightOffset < $winScoll) {
 			$('header').addClass('scrolled');
 		} else {
 			$('header').removeClass('scrolled');
@@ -27,7 +31,7 @@ $(document).ready(function(){
 			var target = $(this).attr('class');
 			if (data === target) {
 				$('html, body').animate({
-					scrollTop: $(this).offset().top - 70
+					scrollTop: $(this).offset().top - 60
 				}, 500);
 				return false;
 			}
@@ -42,7 +46,7 @@ $(document).ready(function(){
 			var target = $(this).attr('class');
 			if (link === target) {
 				$('html, body').animate({
-					scrollTop: $(this).offset().top - 70
+					scrollTop: $(this).offset().top - 60
 				}, 500);
 				return false;
 			}
