@@ -97,7 +97,8 @@ label {
 
 .wrapper {
   position: relative;
-  left: 0px;
+  left: 0;
+  overflow: hidden;
   -webkit-transition: all ease-in-out 200ms;
   -moz-transition: all ease-in-out 200ms;
   -o-transition: all ease-in-out 200ms;
@@ -121,7 +122,7 @@ header {
 }
 
 header .shell {
-  padding: 0 15px 0 15px;
+  padding: 0 0 0 15px;
 }
 
 header nav {
@@ -130,10 +131,7 @@ header nav {
 
 header.scrolled {
   background: #fff !important;
-}
-
-header.scrolled .box-button {
-  border-color: #000;
+  height: 40px;
 }
 
 .slide header {
@@ -142,7 +140,7 @@ header.scrolled .box-button {
 
 /* Navigation */
 nav {
-  padding: 15px;
+  padding: 7px 15px 0;
   display: inline-block;
 }
 
@@ -152,6 +150,7 @@ nav ul li {
   text-transform: uppercase;
   border: solid 2px transparent;
   padding: 5px 10px;
+  cursor: pointer;
   -webkit-transition: all ease-in-out 200ms;
   -moz-transition: all ease-in-out 200ms;
   -o-transition: all ease-in-out 200ms;
@@ -182,10 +181,6 @@ nav li:hover {
   content: '\f038';
 }
 
-.scrolled .mobile-menu {
-  color: #000;
-}
-
 .slide .mobile-menu i:before {
   content: '\f08b';
 }
@@ -206,7 +201,11 @@ nav li:hover {
   transition: all ease-in-out 200ms;
 }
 
-.push-menu nav ul li {
+.push-menu nav li:first-of-type {
+  margin-top: 20px;
+}
+
+.push-menu nav li {
   display: block;
   margin-left: 0px;
   font-size: 18px;
@@ -283,12 +282,29 @@ form button, form .button {
   background-size: 100%;
 }
 
+/** Scrolled Header Styles **/
 .scrolled .logo {
   background-image: url(img/logo-black.svg);
+  height: auto;
+  width: 25px;
+  height: 35px;
+}
+
+.scrolled nav {
+  padding-top: 3px;
+}
+
+.scrolled nav li:hover {
+  border-color: #000;
 }
 
 .scrolled nav a {
   color: #000;
+}
+
+.scrolled .mobile-menu {
+  color: #000;
+  font-size: 30px;
 }
 
 /** Section Inner **/
@@ -414,6 +430,18 @@ footer p {
   font-size: 11px;
 }
 
+footer ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 10px 5px 0px;
+  list-style: none;
+}
+
+footer a {
+  color: #fff;
+  font-size: 20px;
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   /** Defaults **/
@@ -434,6 +462,10 @@ footer p {
 
   input, textarea {
     width: 90%;
+  }
+  /** Header **/
+  header .shell {
+    padding: 0 0 0 5px;
   }
   /** Navigation **/
   header nav {
@@ -456,6 +488,8 @@ footer p {
 
   .section-main button {
     width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .slide .section-main .section-inner {
