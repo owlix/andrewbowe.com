@@ -23,7 +23,6 @@ $(document).ready(function(){
 	//Fade In on Scroll Effect 
 	new WOW().init();
 
-
 	//Custom Scroll To Section (button)
 	$('button').on('click', function(){
 		var data = $(this).attr('data-link');
