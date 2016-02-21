@@ -295,7 +295,7 @@ section.section-main
 {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  /*background-image: url(img/main-background.jpg);*/
+  background-image: url(img/background.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
