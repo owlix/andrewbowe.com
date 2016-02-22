@@ -1,8 +1,7 @@
 $(document).ready(function(){
-	
+
 	var $windowWidth = $(window).width();  
 	var $winHeight = $(window).height();
-	
 	
 	//Update header 
 	$(window).on("scroll", function(){
@@ -33,7 +32,7 @@ $(document).ready(function(){
 			var target = $(this).attr('class');
 			if (data === target) {
 				$('html, body').animate({
-					scrollTop: $(this).offset().top - 60
+					scrollTop: $(this).offset().top - 50
 				}, 500);
 				return false;
 			}
@@ -48,7 +47,7 @@ $(document).ready(function(){
 			var target = $(this).attr('class');
 			if (link === target) {
 				$('html, body').animate({
-					scrollTop: $(this).offset().top - 60
+					scrollTop: $(this).offset().top - 50
 				}, 500);
 				return false;
 			}

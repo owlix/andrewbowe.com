@@ -119,6 +119,7 @@ header {
   -o-transition: all ease-in-out 200ms;
   transition: all ease-in-out 200ms;
   left: 0;
+  border-bottom: 1px solid transparent;
 }
 
 header .shell {
@@ -132,6 +133,7 @@ header nav {
 header.scrolled {
   background: #fff !important;
   height: 40px;
+  border-bottom: 1px solid #999;
 }
 
 .slide header {
