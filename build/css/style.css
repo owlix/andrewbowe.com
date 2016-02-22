@@ -119,7 +119,6 @@ header {
   -o-transition: all ease-in-out 200ms;
   transition: all ease-in-out 200ms;
   left: 0;
-  border-bottom: 1px solid transparent;
 }
 
 header .shell {
@@ -133,7 +132,6 @@ header nav {
 header.scrolled {
   background: #fff !important;
   height: 40px;
-  border-bottom: 1px solid #999;
 }
 
 .slide header {
@@ -339,6 +337,7 @@ form button, form .button {
   color: #fff;
   text-transform: uppercase;
   margin: 0 0 20px 0;
+  font-size: 4em;
 }
 
 .section-main .section-inner h2 {
@@ -493,6 +492,10 @@ footer a {
     position: relative;
     padding: 0;
     left: initial;
+  }
+
+  .section-main .section-inner h1 {
+    font-size: 2.5em;
   }
 
   .section-main .section-inner h2 {
