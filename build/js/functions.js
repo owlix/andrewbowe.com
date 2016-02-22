@@ -63,7 +63,7 @@ $(document).ready(function(){
 	function getScrollPositons(){
 		var $winScoll = $(window).scrollTop() + 70;
 		var lastSection = $('section').last().attr('class');
-			//console.log(lastSection);
+		
 		$('section').each(function(){
 			var section = $(this),
 			sectionClass = $(this).attr('class'),
@@ -106,8 +106,6 @@ $(document).ready(function(){
 			$('#email').val('');
 			$('#message').val('');
 		};
-
-
 
 		$.ajax({
 			type: 'POST',
