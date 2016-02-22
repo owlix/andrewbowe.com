@@ -3,10 +3,13 @@ $(document).ready(function(){
 	var $windowWidth = $(window).width();  
 	var $winHeight = $(window).height();
 	
+	
 	//Update header 
 	$(window).on("scroll", function(){
-		var $winScoll = $(window).scrollTop(),
-		    heightOffset = $winHeight - 20;
+		var $winScoll = $(window).scrollTop();
+		getScrollPositons();
+		var heightOffset = $winHeight - 20;
+		
 		if (heightOffset < $winScoll) {
 			$('header').addClass('scrolled');
 		} else {
@@ -56,12 +59,47 @@ $(document).ready(function(){
 		}
 	})
 
+	//Custom Scroll Spy
+	function getScrollPositons(){
+		var $winScoll = $(window).scrollTop() + 70;
+		var lastSection = $('section').last().attr('class');
+			//console.log(lastSection);
+		$('section').each(function(){
+			var section = $(this),
+			sectionClass = $(this).attr('class'),
+			sectionPosition = $(this).offset().top,
+			nextSection = $(this).next();
+			
+			if (nextSection.length){
+				var nextsectionPosition = nextSection.offset().top;
+				if (sectionPosition <= $winScoll && nextsectionPosition > $winScoll){
+					loopNavLinks();
+				}
+			}else {
+				if(sectionPosition <= $winScoll && sectionClass === lastSection ) {
+					loopNavLinks();
+				}
+			}
+
+			function loopNavLinks(){
+				$('a.scroll').each(function(){
+					var data = $(this).attr('href');
+					if(data === sectionClass) {
+						$(this).parent().addClass('active');
+					}else {
+						$(this).parent().removeClass('active');
+					}
+				})
+			}
+		});
+	}
+
 	//Form Submisson
 	$('.form-submit').on('click', function(e){
 		e.preventDefault();
 		var name = $('#name').val(),
-			email = $('#email').val(),
-			message = $('#message').val();
+		email = $('#email').val(),
+		message = $('#message').val();
 
 		function clearForm() {
 			$('#name').val('');

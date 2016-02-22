@@ -294,8 +294,9 @@ form button, form .button {
   padding-top: 3px;
 }
 
-.scrolled nav li:hover {
+.scrolled nav li:hover, .scrolled nav li.active {
   border-color: #000;
+  color: #000;
 }
 
 .scrolled nav a {
