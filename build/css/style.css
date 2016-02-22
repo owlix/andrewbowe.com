@@ -317,8 +317,7 @@ form button, form .button {
 /** Section Main **/
 .section-main {
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  background-image: url(img/background.jpg);
+  background-color: rgba(0, 0, 0, 0.4) !important;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
