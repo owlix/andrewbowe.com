@@ -317,12 +317,6 @@ form button, form .button {
 /** Section Main **/
 .section-main {
   height: 100vh;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%) !important;
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%) !important;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%) !important;
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -356,6 +350,17 @@ form button, form .button {
   margin: 10px 5px;
   padding: 5px 20px;
   position: relative;
+}
+
+@media (min-width: 767px) {
+  .section-main {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%) !important;
+      /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%) !important;
+      /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%) !important;
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */;
+  }
 }
 
 .slide .section-main .section-inner {
