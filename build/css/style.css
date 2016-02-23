@@ -488,6 +488,10 @@ footer a {
     display: inline-block;
   }
   /** Section Main **/
+  .section-main {
+    background: transparent !important;
+  }
+
   .section-main .section-inner {
     position: relative;
     padding: 0;
