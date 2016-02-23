@@ -489,7 +489,8 @@ footer a {
   }
   /** Section Main **/
   .section-main {
-    background: url(img/background2.jpg) !important;
+    background-image: url(img/background2.jpg) !important;
+    background-size: cover;
   }
 
   .section-main .section-inner {
