@@ -1,124 +1,132 @@
-$(document).ready(function(){
+var $doc = $(document),
+	$win = $(window);
+$doc.ready(function() {
 
-	var $windowWidth = $(window).width();  
-	var $winHeight = $(window).height();
-	
-	//Update header 
-	$(window).on("scroll", function(){
-		var $winScoll = $(window).scrollTop();
-		getScrollPositons();
-		var heightOffset = $winHeight - 20;
-		
-		if (heightOffset < $winScoll) {
-			$('header').addClass('scrolled');
-		} else {
-			$('header').removeClass('scrolled');
-		}	
-		
-	});
+    var $winWidth = $win.width();
+    var $winHeight = $win.height();
 
-	//Push Menu
-	$('.mobile-menu').on('click', function(){
-		$('body').toggleClass('slide');
-	});
+    //Update header 
+    $win.on("scroll", function() {
+        var $winScoll = $win.scrollTop();
+        getScrollPositons();
+        var heightOffset = $winHeight - 20;
 
-	//Fade In on Scroll Effect 
-	new WOW().init();
+        if (heightOffset < $winScoll) {
+            $('header').addClass('scrolled');
+        } else {
+            $('header').removeClass('scrolled');
+        }
 
-	//Custom Scroll To Section (button)
-	$('button').on('click', function(){
-		var data = $(this).attr('data-link');
-		$('section').each(function(){
-			var target = $(this).attr('class');
-			if (data === target) {
-				$('html, body').animate({
-					scrollTop: $(this).offset().top - 50
-				}, 500);
-				return false;
-			}
-		});
-	})
+    });
 
-	//Custom Scroll To Section (a)
-	$('a.scroll').on('click', function(e){
-		e.preventDefault();
-		var link = $(this).attr('href');
-		$('section').each(function(){
-			var target = $(this).attr('class');
-			if (link === target) {
-				$('html, body').animate({
-					scrollTop: $(this).offset().top - 50
-				}, 500);
-				return false;
-			}
-		});
-		//Close mobile menu
-		if ($windowWidth < 640  ){
-			$('body').toggleClass('slide');
-		}
-	})
+    //Push Menu
+    $('.mobile-menu').on('click', function() {
+        $('body').toggleClass('slide');
+    });
 
-	//Custom Scroll Spy
-	function getScrollPositons(){
-		var $winScoll = $(window).scrollTop() + 70;
-		var lastSection = $('section').last().attr('class');
-		
-		$('section').each(function(){
-			var section = $(this),
-			sectionClass = $(this).attr('class'),
-			sectionPosition = $(this).offset().top,
-			nextSection = $(this).next();
-			
-			if (nextSection.length){
-				var nextsectionPosition = nextSection.offset().top;
-				if (sectionPosition <= $winScoll && nextsectionPosition > $winScoll){
-					loopNavLinks();
-				}
-			}else {
-				if(sectionPosition <= $winScoll && sectionClass === lastSection ) {
-					loopNavLinks();
-				}
-			}
+    //Fade In on Scroll Effect 
+    new WOW().init();
 
-			function loopNavLinks(){
-				$('a.scroll').each(function(){
-					var data = $(this).attr('href');
-					if(data === sectionClass) {
-						$(this).parent().addClass('active');
-					}else {
-						$(this).parent().removeClass('active');
-					}
-				})
-			}
-		});
-	}
+    //Custom Scroll To Section (button)
+    $('button').on('click', function() {
+        var data = $(this).attr('data-link');
+        $('section').each(function() {
+            var target = $(this).attr('class');
+            if (data === target) {
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top - 50
+                }, 500);
+                return false;
+            }
+        });
+    })
 
-	//Form Submisson
-	$('.form-submit').on('click', function(e){
-		e.preventDefault();
-		var name = $('#name').val(),
-		email = $('#email').val(),
-		message = $('#message').val();
+    //Custom Scroll To Section (a)
+    $('a.scroll').on('click', function(e) {
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('section').each(function() {
+            var target = $(this).attr('class');
+            if (link === target) {
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top - 50
+                }, 500);
+                return false;
+            }
+        });
+        //Close mobile menu
+        if ($windowWidth < 640) {
+            $('body').toggleClass('slide');
+        }
+    })
 
-		function clearForm() {
-			$('#name').val('');
-			$('#email').val('');
-			$('#message').val('');
-		};
+    //Form Submisson
+    $('.form-submit').on('click', function(e) {
+        e.preventDefault();
+        var name = $('#name').val(),
+            email = $('#email').val(),
+            message = $('#message').val();
 
-		$.ajax({
-			type: 'POST',
-			url: 'sendForm.php',
-			data: {
-				name: name,
-				email: email,
-				message: message
-			},
-			success: function(){
-				clearForm();
-				$('.form-submit').before('<p>Message Sent Successfully!</p>');
-			}
-		});
-	});
+        function clearForm() {
+            $('#name').val('');
+            $('#email').val('');
+            $('#message').val('');
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: 'sendForm.php',
+            data: {
+                name: name,
+                email: email,
+                message: message
+            },
+            success: function() {
+                clearForm();
+                $('.form-submit').before('<p>Message Sent Successfully!</p>');
+            }
+        });
+    });
+
+    $('.date').html(function() {
+        var today = new Date(),
+            year = today.getFullYear();
+        return year;
+    })
 
 });
+
+//Custom Scroll Spy
+function getScrollPositons() {
+    var $winScoll = $win.scrollTop() + 70;
+    var lastSection = $('section').last().attr('class');
+
+    $('section').each(function() {
+        var section = $(this),
+            sectionClass = $(this).attr('class'),
+            sectionPosition = $(this).offset().top,
+            nextSection = $(this).next();
+
+        if (nextSection.length) {
+            var nextsectionPosition = nextSection.offset().top;
+            if (sectionPosition <= $winScoll && nextsectionPosition > $winScoll) {
+                loopNavLinks();
+            }
+        } else {
+            if (sectionPosition <= $winScoll && sectionClass === lastSection) {
+                loopNavLinks();
+            }
+        }
+
+        function loopNavLinks() {
+            $('a.scroll').each(function() {
+                var data = $(this).attr('href');
+                if (data === sectionClass) {
+                    $(this).parent().addClass('active');
+                } else {
+                    $(this).parent().removeClass('active');
+                }
+            })
+        }
+    });
+}
