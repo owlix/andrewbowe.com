@@ -118,8 +118,20 @@ textarea {
 }
 
 label {
-  display: none;
+  display: block;
+  position: absolute;
 }
+
+.input-holder { position: relative; max-width: 300px; margin: 0 auto; } 
+
+.input-holder label { top: 19px; left: 17px; font-family: "Noto Sans", sans-serif; text-transform: lowercase; letter-spacing: 2px;  
+  -webkit-transition: all ease-in-out 200ms;
+  -moz-transition: all ease-in-out 200ms;
+  -o-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms; 
+}
+
+.input-holder.focused label { top: 0px; font-size: 11px; }
 
 .slide .wrapper {
   left: -200px;
@@ -291,6 +303,7 @@ form input, form textarea {
   border: 2px solid black;
   color: black;
   font-size: 18px;
+   -webkit-border-radius: 0; 
 }
 
 form button, form .button {

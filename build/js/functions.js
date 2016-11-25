@@ -5,6 +5,13 @@ $doc.ready(function() {
     var $winWidth = $win.width();
     var $winHeight = $win.height();
 
+    function isMobile() {
+    	if ($winWidth > 768) {
+    		console.log('mobile device detected');
+    		return false;
+    	}
+    }
+
     //Update header 
     $win.on("scroll", function() {
         var $winScoll = $win.scrollTop();
@@ -55,10 +62,35 @@ $doc.ready(function() {
             }
         });
         //Close mobile menu
-        if ($windowWidth < 640) {
+        if ($winWidth < 640) {
             $('body').toggleClass('slide');
         }
-    })
+    });
+
+    $('input').on('focus', function() {
+    	$(this).parent().addClass('focused');
+    });
+
+
+    $('input').on('blur', function() {
+    	if ($(this).val() === '') {
+    		$(this).parent().removeClass('focused');
+    	}
+    	
+    });
+
+     $('textarea').on('focus', function() {
+    	$(this).parent().addClass('focused');
+    });
+
+
+    $('textarea').on('blur', function() {
+    	if ($(this).val() === '') {
+    		$(this).parent().removeClass('focused');
+    	}
+    	
+    });
+
 
     //Form Submisson
     $('.form-submit').on('click', function(e) {
